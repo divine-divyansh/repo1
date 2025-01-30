@@ -1,0 +1,396 @@
+/* Add these new styles to your CSS */
+:root {
+    --primary-glow: #ff006a;
+    --secondary-glow: #ff9900;
+    --text-glow: #fff200;
+    --jjk-red: #FF1E00;
+    --jjk-blue: #00A9FF;
+    --anya-pink: #FF69B4;
+    --spy-gold: #FFD700;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.centrebox {
+    position: relative;
+    z-index: 2;
+    margin: 5vh auto;
+    /* Reduced margin */
+    transform: translateY(0);
+    /* Ensures proper positioning */
+}
+
+.profile-container {
+    position: relative;
+    margin: 30px;
+    width: 120px;
+}
+
+
+
+.video-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bgvideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+    filter: hue-rotate(-10deg) contrast(120%);
+}
+
+.footers {
+    position: relative;
+    z-index: 3;
+    margin-top: auto;
+    border: 1px solid var(--spy-gold);
+    background: rgba(0, 169, 255, 0.15);
+    /* Pushes footer to bottom */
+}
+
+.halo {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    animation: halo-pulse 2s ease-in-out infinite;
+    background: radial-gradient(circle,
+            rgba(255, 105, 180, 0.4) 0%,
+            rgba(255, 30, 0, 0.2) 50%,
+            transparent 80%);
+}
+
+h2 {
+    font-family: 'Barlow Condensed', 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    background: linear-gradient(
+    135deg,
+        #00a9ff 20%,  /* Gojo's blue eyes */
+        #ffffff 40%,  /* Infinity white */
+        #9b59b6 60%,  /* Purple cursed energy */
+        #00a9ff 80%
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 
+        0 0 25px rgba(0, 169, 255, 0.6),  /* Blue glow */
+        0 0 40px rgba(155, 89, 182, 0.4), /* Purple aura */
+        0 0 55px rgba(255, 255, 255, 0.2); /* Infinity sparkle */
+    animation: 
+        infinitevoid1 4s linear infinite,
+        infinitefloat 3s ease-in-out infinite;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+@keyframes infinitevoid1 {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating Domain Effect */
+@keyframes infinitefloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Add 3D Depth Effect */
+h2::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: transparent;
+    text-shadow: 
+        0 2px 10px rgba(0,0,0,0.3),
+        0 -2px 20px rgba(255,255,255,0.2);
+}
+
+/* Spy x Family List Markers */
+
+
+
+.profile-pic {
+
+    box-shadow: 0 0 30px var(--jjk-blue);
+    width: 120px;
+    height: 120px;
+
+
+    border: 3px solid #a5d4ec;
+    /* JJK blue */
+    filter: drop-shadow(0 0 20px #FFFFFF);
+    /* Infinity effect */
+    animation: infinite-float 3s ease-in-out infinite;
+}
+@keyframes infinite-float {
+    0% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(-5deg); }
+  }
+
+
+@keyframes halo-pulse {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #fff;
+    text-shadow: 0 0 10px var(--text-glow);
+    margin: 10px 0;
+    animation: text-glow 2s ease-in-out infinite;
+}
+
+.fun-list {
+    text-align: left;
+    margin: 15px 0;
+    list-style-type: '🕶️ ';
+}
+
+.fun-list li {
+    margin: 10px 0;
+    padding-left: 10px;
+    font-size: 0.9rem;
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.fun-list li:hover {
+    transform: translateX(10px);
+    text-shadow: 0 0 10px var(--text-glow);
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.socials {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 15px var(--primary-glow);
+
+
+    background: rgba(0, 169, 255, 0.1);
+    border-radius: 50%;
+    padding: 12px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.socials:hover {
+    filter: hue-rotate(90deg);
+    background: var(--jjk-red);
+    transform: rotate(360deg) scale(1.2);
+}
+
+.funky-button {
+
+
+    padding: 15px 30px;
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 25px var(--primary-glow);
+    position: relative;
+    overflow: hidden;
+
+
+    background: linear-gradient(45deg,
+            var(--jjk-red),
+            var(--anya-pink));
+    letter-spacing: 2px;
+    border: 2px solid var(--spy-gold);
+
+}
+
+.funky-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px var(--secondary-glow);
+    animation: curse-pulse 0.5s infinite
+}
+
+.particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particle-float 5s infinite linear;
+}
+
+@keyframes curse-pulse {
+    0% {
+        filter: drop-shadow(0 0 5px var(--jjk-red));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 20px var(--jjk-blue));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 5px var(--anya-pink));
+    }
+}
+
+@keyframes particle-float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+    }
+}
+
+.float-message {
+    position: fixed;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--primary-glow);
+    animation: float-up 2s ease-out;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Improved responsive design */
+@media (max-width: 768px) {
+    .centrebox {
+        width: 90%;
+        margin: 10vh auto;
+        padding: 20px;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .social-container {
+        gap: 15px;
+    }
+}
+
+/* Add to CSS */
+.float-message {
+    position: fixed;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: center;
+    pointer-events: none;
+    animation: float-up 5s ease-out forwards;
+    text-shadow:
+        0 0 10px rgb(145, 101, 101),
+        0 0 20px var(--jjk-red),
+        0 0 30px var(--anya-pink);
+    background: linear-gradient(45deg,
+            var(--jjk-red),
+            var(--jjk-blue),
+            var(--anya-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    left: 50%;
+    white-space: nowrap;
+}
+
+@keyframes float-up {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100vh) scale(2);
+        filter: blur(0px);
+    }
+}
+
+/* Add emoji effect */
+.float-message::after {
+    content: "✨";
+    position: absolute;
+    right: -30px;
+    animation: emoji-float 5s ease-out;
+}
+
+@keyframes emoji-float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-50px) rotate(360deg);
+        opacity: 0;
+    }
+}
